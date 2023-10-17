@@ -8,6 +8,7 @@ export class Menu implements Module {
         zoom: Number(localStorage.zoom) || 100,
         useAutofill: localStorage.autofill === "true",
         smartFilter: localStorage.smartFilter !== "false",
+        showFavicon: localStorage.showFavicon === "true",
         theme:
           localStorage.theme ||
           (localStorage.highContrast === "true" ? "accessibility" : "normal"),
@@ -36,6 +37,10 @@ export class Menu implements Module {
         setSmartFilter(state: MenuState, smartFilter: boolean) {
           state.smartFilter = smartFilter;
           localStorage.smartFilter = smartFilter;
+        },
+        setShowFavicon(state: MenuState, showFavicon: boolean) {
+          state.showFavicon = showFavicon;
+          localStorage.showFavicon = showFavicon;
         },
         setTheme(state: MenuState, theme: string) {
           state.theme = theme;
